@@ -1,0 +1,12 @@
+Name: Lembra
+Summary: Recordatorios recurrentes con notificaciones
+Description: |-
+  App Android para no olvidar vencimientos que se repiten: seguro del coche,
+  vacunas de las mascotas, revisiones de la caldera... Crea una ficha con
+  fecha de inicio, periodicidad y número de repeticiones, y Lembra te avisa
+  con la antelación que elijas.
+Categories:
+  - Time
+License: Unknown
+AuthorName: tizzenn
+WebSite: https://github.com/tizzenn/lembra

@@ -1,0 +1,215 @@
+{
+  "repo": {
+    "name": {
+      "en-US": "Repositorio de tizzenn"
+    },
+    "description": {
+      "en-US": "Apps publicadas por tizzenn"
+    },
+    "icon": {
+      "en-US": {
+        "name": "/icons/icon.png",
+        "sha256": "d0a6d9fc959c47f20445933a87c50b61cc01ac720b517df2113688f07b2bd67e",
+        "size": 721
+      }
+    },
+    "address": "https://tizzenn.github.io/fdroid/repo",
+    "timestamp": 1782998524000,
+    "categories": {
+      "Time": {
+        "name": {
+          "en-US": "Time"
+        }
+      }
+    }
+  },
+  "packages": {
+    "com.lembra.app": {
+      "metadata": {
+        "added": 1782944295000,
+        "categories": [
+          "Time"
+        ],
+        "lastUpdated": 1782998524000,
+        "webSite": "https://github.com/tizzenn/lembra",
+        "authorName": "tizzenn",
+        "name": {
+          "en-US": "Lembra"
+        },
+        "summary": {
+          "en-US": "Recordatorios recurrentes con notificaciones"
+        },
+        "description": {
+          "en-US": "App Android para no olvidar vencimientos que se repiten: seguro del coche,\nvacunas de las mascotas, revisiones de la caldera... Crea una ficha con\nfecha de inicio, periodicidad y número de repeticiones, y Lembra te avisa\ncon la antelación que elijas."
+        },
+        "preferredSigner": "2e7304a9c03ffe47106c33af65f915ec8665fb1650a19a9b391e370f8574f12b"
+      },
+      "versions": {
+        "3d6982a7949f794dfb712b29a2f12279aa7155c98e1b21623277d76951a79836": {
+          "added": 1782998524000,
+          "file": {
+            "name": "/lembra-v1.4.apk",
+            "sha256": "3d6982a7949f794dfb712b29a2f12279aa7155c98e1b21623277d76951a79836",
+            "size": 4996111
+          },
+          "manifest": {
+            "versionName": "1.4",
+            "versionCode": 5,
+            "usesSdk": {
+              "minSdkVersion": 26,
+              "targetSdkVersion": 34
+            },
+            "signer": {
+              "sha256": [
+                "2e7304a9c03ffe47106c33af65f915ec8665fb1650a19a9b391e370f8574f12b"
+              ]
+            },
+            "usesPermission": [
+              {
+                "name": "android.permission.RECEIVE_BOOT_COMPLETED"
+              },
+              {
+                "name": "android.permission.READ_CALENDAR"
+              },
+              {
+                "name": "android.permission.WRITE_CALENDAR"
+              },
+              {
+                "name": "android.permission.POST_NOTIFICATIONS"
+              },
+              {
+                "name": "android.permission.SCHEDULE_EXACT_ALARM"
+              },
+              {
+                "name": "android.permission.USE_EXACT_ALARM"
+              },
+              {
+                "name": "com.lembra.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+              }
+            ]
+          }
+        },
+        "b4f020e750aacf57fd6ede3c85f8a5f16ae4a90a325a09e484a7d49622dfd507": {
+          "added": 1782945845000,
+          "file": {
+            "name": "/lembra-v1.3.apk",
+            "sha256": "b4f020e750aacf57fd6ede3c85f8a5f16ae4a90a325a09e484a7d49622dfd507",
+            "size": 4958858
+          },
+          "manifest": {
+            "versionName": "1.3",
+            "versionCode": 4,
+            "usesSdk": {
+              "minSdkVersion": 26,
+              "targetSdkVersion": 34
+            },
+            "signer": {
+              "sha256": [
+                "2e7304a9c03ffe47106c33af65f915ec8665fb1650a19a9b391e370f8574f12b"
+              ]
+            },
+            "usesPermission": [
+              {
+                "name": "android.permission.RECEIVE_BOOT_COMPLETED"
+              },
+              {
+                "name": "android.permission.READ_CALENDAR"
+              },
+              {
+                "name": "android.permission.WRITE_CALENDAR"
+              },
+              {
+                "name": "android.permission.POST_NOTIFICATIONS"
+              },
+              {
+                "name": "android.permission.SCHEDULE_EXACT_ALARM"
+              },
+              {
+                "name": "android.permission.USE_EXACT_ALARM"
+              },
+              {
+                "name": "com.lembra.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+              }
+            ]
+          }
+        },
+        "782e1cf4148cca750bf9121198c8486ade77b3b8550a9f573b6727de185ca393": {
+          "added": 1782945438000,
+          "file": {
+            "name": "/lembra-v1.2.apk",
+            "sha256": "782e1cf4148cca750bf9121198c8486ade77b3b8550a9f573b6727de185ca393",
+            "size": 4953278
+          },
+          "manifest": {
+            "versionName": "1.2",
+            "versionCode": 3,
+            "usesSdk": {
+              "minSdkVersion": 26,
+              "targetSdkVersion": 34
+            },
+            "signer": {
+              "sha256": [
+                "2e7304a9c03ffe47106c33af65f915ec8665fb1650a19a9b391e370f8574f12b"
+              ]
+            },
+            "usesPermission": [
+              {
+                "name": "android.permission.RECEIVE_BOOT_COMPLETED"
+              },
+              {
+                "name": "android.permission.POST_NOTIFICATIONS"
+              },
+              {
+                "name": "android.permission.SCHEDULE_EXACT_ALARM"
+              },
+              {
+                "name": "android.permission.USE_EXACT_ALARM"
+              },
+              {
+                "name": "com.lembra.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+              }
+            ]
+          }
+        },
+        "d796028dfc82e19c4a9d75f2734d63519172c3bc0250a682aa67a2fbffd78df6": {
+          "added": 1782944295000,
+          "file": {
+            "name": "/lembra-v1.1.apk",
+            "sha256": "d796028dfc82e19c4a9d75f2734d63519172c3bc0250a682aa67a2fbffd78df6",
+            "size": 4950866
+          },
+          "manifest": {
+            "versionName": "1.1",
+            "versionCode": 2,
+            "usesSdk": {
+              "minSdkVersion": 26,
+              "targetSdkVersion": 34
+            },
+            "signer": {
+              "sha256": [
+                "2e7304a9c03ffe47106c33af65f915ec8665fb1650a19a9b391e370f8574f12b"
+              ]
+            },
+            "usesPermission": [
+              {
+                "name": "android.permission.RECEIVE_BOOT_COMPLETED"
+              },
+              {
+                "name": "android.permission.POST_NOTIFICATIONS"
+              },
+              {
+                "name": "android.permission.SCHEDULE_EXACT_ALARM"
+              },
+              {
+                "name": "android.permission.USE_EXACT_ALARM"
+              },
+              {
+                "name": "com.lembra.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}
