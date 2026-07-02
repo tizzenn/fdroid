@@ -1,6 +1,6 @@
 {
   "repo": {
-    "timestamp": 1783011862000,
+    "timestamp": 1783024874000,
     "version": 20002,
     "name": "Repositorio de tizzenn",
     "icon": "icon.png",
@@ -21,7 +21,7 @@
       "name": "Bote",
       "added": 1783008064000,
       "packageName": "com.bote.app",
-      "lastUpdated": 1783011860000
+      "lastUpdated": 1783024872000
     },
     {
       "authorName": "tizzenn",
@@ -41,6 +41,42 @@
   ],
   "packages": {
     "com.bote.app": [
+      {
+        "added": 1783024872000,
+        "apkName": "bote-v1.2.apk",
+        "hash": "3b1c88a5a7505f7cc3792630e432759a78bcd3de726e091094d577d1b4183145",
+        "hashType": "sha256",
+        "minSdkVersion": 26,
+        "packageName": "com.bote.app",
+        "sig": "38528f1de36f33a4e83c5acd2a67a809",
+        "signer": "b74213890f52e816ad6a6734887529b7f2c8edb7da09e110f620369a5acfa963",
+        "size": 5298048,
+        "targetSdkVersion": 34,
+        "uses-permission": [
+          [
+            "android.permission.RECEIVE_BOOT_COMPLETED",
+            null
+          ],
+          [
+            "android.permission.POST_NOTIFICATIONS",
+            null
+          ],
+          [
+            "android.permission.READ_CONTACTS",
+            null
+          ],
+          [
+            "com.bote.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+            null
+          ],
+          [
+            "android.permission.CAMERA",
+            null
+          ]
+        ],
+        "versionCode": 3,
+        "versionName": "1.2"
+      },
       {
         "added": 1783011860000,
         "apkName": "bote-v1.1.apk",
