@@ -1,6 +1,6 @@
 {
   "repo": {
-    "timestamp": 1783007730000,
+    "timestamp": 1783008066000,
     "version": 20002,
     "name": "Repositorio de tizzenn",
     "icon": "icon.png",
@@ -12,6 +12,17 @@
     "uninstall": []
   },
   "apps": [
+    {
+      "categories": [
+        "fdroid"
+      ],
+      "suggestedVersionCode": "2147483647",
+      "license": "Unknown",
+      "name": "Bote",
+      "added": 1783008064000,
+      "packageName": "com.bote.app",
+      "lastUpdated": 1783008064000
+    },
     {
       "authorName": "tizzenn",
       "categories": [
@@ -29,6 +40,40 @@
     }
   ],
   "packages": {
+    "com.bote.app": [
+      {
+        "added": 1783008064000,
+        "apkName": "bote-v1.0.apk",
+        "hash": "87e18cdfd9b7885be59e9818ffd0a3433b38a738e073938797b1b58a664b43b5",
+        "hashType": "sha256",
+        "minSdkVersion": 26,
+        "packageName": "com.bote.app",
+        "sig": "38528f1de36f33a4e83c5acd2a67a809",
+        "signer": "b74213890f52e816ad6a6734887529b7f2c8edb7da09e110f620369a5acfa963",
+        "size": 4940329,
+        "targetSdkVersion": 34,
+        "uses-permission": [
+          [
+            "android.permission.RECEIVE_BOOT_COMPLETED",
+            null
+          ],
+          [
+            "android.permission.POST_NOTIFICATIONS",
+            null
+          ],
+          [
+            "android.permission.READ_CONTACTS",
+            null
+          ],
+          [
+            "com.bote.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+            null
+          ]
+        ],
+        "versionCode": 1,
+        "versionName": "1.0"
+      }
+    ],
     "com.lembra.app": [
       {
         "added": 1783007730000,

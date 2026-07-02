@@ -14,16 +14,71 @@
       }
     },
     "address": "https://tizzenn.github.io/fdroid/repo",
-    "timestamp": 1783007730000,
+    "timestamp": 1783008066000,
     "categories": {
       "Time": {
         "name": {
           "en-US": "Time"
         }
+      },
+      "fdroid": {
+        "name": {
+          "en-US": "fdroid"
+        }
       }
     }
   },
   "packages": {
+    "com.bote.app": {
+      "metadata": {
+        "added": 1783008064000,
+        "categories": [
+          "fdroid"
+        ],
+        "lastUpdated": 1783008064000,
+        "name": {
+          "en-US": "Bote"
+        },
+        "preferredSigner": "b74213890f52e816ad6a6734887529b7f2c8edb7da09e110f620369a5acfa963"
+      },
+      "versions": {
+        "87e18cdfd9b7885be59e9818ffd0a3433b38a738e073938797b1b58a664b43b5": {
+          "added": 1783008064000,
+          "file": {
+            "name": "/bote-v1.0.apk",
+            "sha256": "87e18cdfd9b7885be59e9818ffd0a3433b38a738e073938797b1b58a664b43b5",
+            "size": 4940329
+          },
+          "manifest": {
+            "versionName": "1.0",
+            "versionCode": 1,
+            "usesSdk": {
+              "minSdkVersion": 26,
+              "targetSdkVersion": 34
+            },
+            "signer": {
+              "sha256": [
+                "b74213890f52e816ad6a6734887529b7f2c8edb7da09e110f620369a5acfa963"
+              ]
+            },
+            "usesPermission": [
+              {
+                "name": "android.permission.RECEIVE_BOOT_COMPLETED"
+              },
+              {
+                "name": "android.permission.POST_NOTIFICATIONS"
+              },
+              {
+                "name": "android.permission.READ_CONTACTS"
+              },
+              {
+                "name": "com.bote.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+              }
+            ]
+          }
+        }
+      }
+    },
     "com.lembra.app": {
       "metadata": {
         "added": 1782944295000,
