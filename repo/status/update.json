@@ -1,0 +1,44 @@
+{
+  "/etc/issue.net": "Ubuntu 24.04.4 LTS",
+  "antiFeatures": {},
+  "apksigner": "/usr/local/lib/android/sdk/build-tools/37.0.0/apksigner",
+  "archivePolicy0": [],
+  "commandLine": [
+    "/opt/pipx_bin/fdroid update",
+    "--create-metadata",
+    "--pretty"
+  ],
+  "disabled": [],
+  "endTimestamp": 1783007733790,
+  "failedBuilds": {},
+  "fdroiddata": {
+    "commitId": "a4fe7b2a0d84d519358275232f6046bb79254ca2",
+    "isDirty": false,
+    "modifiedFiles": [],
+    "untrackedFiles": [
+      "repo/lembra-v1.5.apk"
+    ]
+  },
+  "jarsigner": "/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.19-10/x64/bin/jarsigner",
+  "keytool": "/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.19-10/x64/bin/keytool",
+  "needsUpdate": [
+    "com.lembra.app"
+  ],
+  "noPackages": [
+    "com.lembra.app"
+  ],
+  "noUpdateCheck": [
+    "com.lembra.app"
+  ],
+  "stages": {
+    "delete_disabled_builds": 1783007727103,
+    "index.make repo": 1783007730299,
+    "prepare_apps repo": 1783007730298,
+    "process_apks": 1783007727103,
+    "read_added_date_from_all_apks": 1783007730298,
+    "remove_apks": 1783007730298,
+    "scan_repo_files": 1783007730297
+  },
+  "startTimestamp": 1783007726000,
+  "subcommand": "update"
+}
