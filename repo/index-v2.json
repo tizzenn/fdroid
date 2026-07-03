@@ -14,7 +14,7 @@
       }
     },
     "address": "https://tizzenn.github.io/fdroid/repo",
-    "timestamp": 1783094184000,
+    "timestamp": 1783094406000,
     "categories": {
       "Time": {
         "name": {
@@ -35,13 +35,54 @@
         "categories": [
           "fdroid"
         ],
-        "lastUpdated": 1783093530000,
+        "lastUpdated": 1783094402000,
         "name": {
           "en-US": "Bote"
         },
         "preferredSigner": "b74213890f52e816ad6a6734887529b7f2c8edb7da09e110f620369a5acfa963"
       },
       "versions": {
+        "011276be9a2a0b06abee823ad16aae228cbd8cb0947e67d74a191da1e02cc4b8": {
+          "added": 1783094402000,
+          "file": {
+            "name": "/bote-v2.2.apk",
+            "sha256": "011276be9a2a0b06abee823ad16aae228cbd8cb0947e67d74a191da1e02cc4b8",
+            "size": 5339140
+          },
+          "manifest": {
+            "versionName": "2.2",
+            "versionCode": 13,
+            "usesSdk": {
+              "minSdkVersion": 26,
+              "targetSdkVersion": 34
+            },
+            "signer": {
+              "sha256": [
+                "b74213890f52e816ad6a6734887529b7f2c8edb7da09e110f620369a5acfa963"
+              ]
+            },
+            "usesPermission": [
+              {
+                "name": "android.permission.INTERNET"
+              },
+              {
+                "name": "android.permission.RECEIVE_BOOT_COMPLETED"
+              },
+              {
+                "name": "android.permission.POST_NOTIFICATIONS"
+              },
+              {
+                "name": "android.permission.READ_CONTACTS"
+              },
+              {
+                "name": "com.bote.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+              },
+              {
+                "name": "android.permission.CAMERA"
+              }
+            ]
+          }
+        },
         "4a6203c2f11c117a31afa8bda8861e7953f7f5cdc07486c5fc6f7e2cbfc53d0b": {
           "added": 1783093530000,
           "file": {
