@@ -12,7 +12,7 @@ con GitHub Actions y se publican aquí vía GitHub Pages.
 https://tizzenn.github.io/fdroid/repo?fingerprint=63D6489D8FC1E7D4076E52B127003666B7805D83189A4F83F4933BB72F8FB144
 ```
 
-3. Busca **Lembra** e instálala. A partir de ahí, las actualizaciones
+3. Busca **Lembra** o **Bote** e instálala. A partir de ahí, las actualizaciones
    llegarán solas como con cualquier otra app de F-Droid.
 
 ## Apps
@@ -20,3 +20,7 @@ https://tizzenn.github.io/fdroid/repo?fingerprint=63D6489D8FC1E7D4076E52B1270036
 | App | Descripción |
 |-----|-------------|
 | Lembra | Recordatorios recurrentes con notificaciones (coche, casa, mascotas…) |
+| Bote | Cuentas compartidas por eventos: quién paga, en qué porcentaje y cómo se salda |
+
+Más información y capturas: <https://tizzenn.github.io/fdroid/>
+(también en [inglés](https://tizzenn.github.io/fdroid/en/)).
