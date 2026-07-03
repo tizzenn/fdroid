@@ -14,7 +14,7 @@
       }
     },
     "address": "https://tizzenn.github.io/fdroid/repo",
-    "timestamp": 1783094406000,
+    "timestamp": 1783094723000,
     "categories": {
       "Time": {
         "name": {
@@ -524,7 +524,7 @@
         "categories": [
           "Time"
         ],
-        "lastUpdated": 1783094184000,
+        "lastUpdated": 1783094723000,
         "webSite": "https://github.com/tizzenn/lembra",
         "authorName": "tizzenn",
         "name": {
@@ -539,6 +539,50 @@
         "preferredSigner": "2e7304a9c03ffe47106c33af65f915ec8665fb1650a19a9b391e370f8574f12b"
       },
       "versions": {
+        "0cb1f85472c72c48af9475ac7e8c7e7e03b876e08f49a5f5e8d2c406e64ebbc7": {
+          "added": 1783094723000,
+          "file": {
+            "name": "/lembra-v1.9.apk",
+            "sha256": "0cb1f85472c72c48af9475ac7e8c7e7e03b876e08f49a5f5e8d2c406e64ebbc7",
+            "size": 5007559
+          },
+          "manifest": {
+            "versionName": "1.9",
+            "versionCode": 10,
+            "usesSdk": {
+              "minSdkVersion": 26,
+              "targetSdkVersion": 34
+            },
+            "signer": {
+              "sha256": [
+                "2e7304a9c03ffe47106c33af65f915ec8665fb1650a19a9b391e370f8574f12b"
+              ]
+            },
+            "usesPermission": [
+              {
+                "name": "android.permission.RECEIVE_BOOT_COMPLETED"
+              },
+              {
+                "name": "android.permission.READ_CALENDAR"
+              },
+              {
+                "name": "android.permission.WRITE_CALENDAR"
+              },
+              {
+                "name": "android.permission.POST_NOTIFICATIONS"
+              },
+              {
+                "name": "android.permission.SCHEDULE_EXACT_ALARM"
+              },
+              {
+                "name": "android.permission.USE_EXACT_ALARM"
+              },
+              {
+                "name": "com.lembra.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+              }
+            ]
+          }
+        },
         "78a3aa402d050eb8024ebed124f4c6d6e244bdfcdeb204be25190ee221ec82fa": {
           "added": 1783094184000,
           "file": {
