@@ -320,11 +320,14 @@ create policy "acceso anon" on eventos_sync
   for all using (true) with check (true);</code>
     <ol start="3" style="color:var(--texto2); font-size:14px; margin:14px 0 0 22px; line-height:1.9;">
       <li>Copy the <em>Project URL</em> and the <em>anon</em> key (Settings → API).</li>
-      <li>In Bote → Settings → <em>Cloud sync</em>: flip the switch and paste both.
-          <strong style="color:var(--texto)">Everyone in the group uses the same two values.</strong></li>
+      <li>When creating the event, under <em>Sync</em> pick <em>Other</em> and paste the URL and key
+          (or save them in Settings as your <em>Default</em> server for your usual group).</li>
     </ol>
-    <p style="margin-top:14px;">From then on, whenever anyone opens an event the app pulls, merges and pushes.
-    The anon key is the key to your group's mailbox: share it privately and don't publish it.
+    <p style="margin-top:14px;"><strong style="color:var(--texto)">Only whoever creates the event sets it up.</strong>
+    The server travels inside the event when you share it (QR or file), so everyone else, on import,
+    gets connected automatically — no typing. Each group can have its own server, so you can be in several
+    groups at once. From then on, whenever anyone opens an event the app pulls, merges and pushes.</p>
+    <p style="margin-top:14px;">The anon key is the key to your group's mailbox: share it privately and don't publish it.
     Prefer your own VPS with PostgREST instead of Supabase? Same table, just change the URL.</p>
   </div>
 </section>

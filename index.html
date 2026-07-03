@@ -319,11 +319,14 @@ create policy "acceso anon" on eventos_sync
   for all using (true) with check (true);</code>
     <ol start="3" style="color:var(--texto2); font-size:14px; margin:14px 0 0 22px; line-height:1.9;">
       <li>Copia la <em>Project URL</em> y la clave <em>anon</em> (Settings → API).</li>
-      <li>En Bote → Ajustes → <em>Sincronización en la nube</em>: activa el interruptor y pega ambas.
-          <strong style="color:var(--texto)">Todos los del grupo ponen los mismos dos valores.</strong></li>
+      <li>Al crear el evento, en <em>Sincronización</em> elige <em>Otro</em> y pega la URL y la clave
+          (o guárdalas en Ajustes como servidor <em>Por defecto</em> para tu grupo habitual).</li>
     </ol>
-    <p style="margin-top:14px;">A partir de ahí, cada vez que alguien abre un evento la app baja, fusiona y sube.
-    La clave anon es la llave del buzón del grupo: compártela por privado y no la publiques.
+    <p style="margin-top:14px;"><strong style="color:var(--texto)">Lo configura solo quien crea el evento.</strong>
+    El servidor viaja dentro del evento al compartirlo (QR o archivo), así que los demás, al importarlo,
+    quedan conectados solos — sin teclear nada. Cada grupo puede tener su propio servidor, así que puedes
+    estar en varios grupos a la vez. A partir de ahí, al abrir un evento la app baja, fusiona y sube.</p>
+    <p style="margin-top:14px;">La clave anon es la llave del buzón del grupo: compártela por privado y no la publiques.
     ¿Un VPS propio con PostgREST en vez de Supabase? Misma tabla, cambia solo la URL.</p>
   </div>
 </section>
