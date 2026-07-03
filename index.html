@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tizzenn · apps</title>
+<meta name="description" content="Lembra y Bote: apps Android libres, sin anuncios, sin cuentas y sin vergüenza. Recordatorios recurrentes y cuentas de grupo.">
+<style>
+  :root {
+    --negro: #111114;
+    --panel: #1a1a1f;
+    --borde: #2a2a31;
+    --rojo: #EF5350;
+    --rojo-oscuro: #B71C1C;
+    --texto: #e8e8ec;
+    --texto2: #9a9aa4;
+    --mono: ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--negro);
+    color: var(--texto);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+  }
+  .contenedor { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+  header { padding: 72px 0 40px; text-align: center; }
+  .logo { font-family: var(--mono); font-size: 15px; color: var(--rojo); letter-spacing: 3px; text-transform: uppercase; }
+  h1 { font-size: clamp(34px, 6vw, 56px); font-weight: 800; margin: 12px 0 8px; letter-spacing: -1px; }
+  h1 .cursor { color: var(--rojo); animation: parpadeo 1.1s steps(1) infinite; }
+  @keyframes parpadeo { 50% { opacity: 0; } }
+  .tagline { color: var(--texto2); font-size: 17px; max-width: 620px; margin: 0 auto; }
+  .tagline em { color: var(--texto); font-style: normal; border-bottom: 1px dotted var(--rojo); }
+
+  section { padding: 40px 0; }
+  h2 { font-family: var(--mono); font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--rojo); margin-bottom: 24px; }
+
+  .apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+  .app {
+    background: var(--panel); border: 1px solid var(--borde); border-radius: 16px;
+    padding: 28px; position: relative; overflow: hidden;
+  }
+  .app::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--rojo), transparent);
+  }
+  .app-cabecera { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+  .app-icono { width: 52px; height: 52px; border-radius: 13px; background: #1A1A1A; display: flex; align-items: center; justify-content: center; border: 1px solid var(--borde); flex-shrink: 0; }
+  .app h3 { font-size: 24px; font-weight: 700; }
+  .app .que-es { color: var(--texto2); font-size: 14px; }
+  .app ul { list-style: none; margin: 14px 0 18px; }
+  .app li { padding: 5px 0 5px 22px; position: relative; font-size: 15px; }
+  .app li::before { content: "▸"; position: absolute; left: 4px; color: var(--rojo); }
+  .badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+  .badge { font-family: var(--mono); font-size: 11px; padding: 3px 10px; border: 1px solid var(--borde); border-radius: 20px; color: var(--texto2); }
+
+  .capturas { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+  .movil { width: 210px; border-radius: 22px; border: 1px solid var(--borde); background: #0c0c0f; padding: 8px; }
+  .movil svg { display: block; width: 100%; border-radius: 15px; }
+  .pie-captura { text-align: center; font-size: 12px; color: var(--texto2); margin-top: 8px; font-family: var(--mono); }
+
+  .descarga { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .opcion { background: var(--panel); border: 1px solid var(--borde); border-radius: 14px; padding: 24px; }
+  .opcion .nivel { font-family: var(--mono); font-size: 11px; color: var(--rojo); letter-spacing: 2px; }
+  .opcion h3 { font-size: 18px; margin: 6px 0 10px; }
+  .opcion p { color: var(--texto2); font-size: 14px; margin-bottom: 14px; }
+  .url {
+    font-family: var(--mono); font-size: 12.5px; background: #0c0c0f; border: 1px solid var(--borde);
+    border-radius: 8px; padding: 10px 12px; word-break: break-all; color: var(--texto);
+    display: block; margin-bottom: 10px;
+  }
+  .boton {
+    display: inline-block; background: var(--rojo-oscuro); color: #fff; text-decoration: none;
+    padding: 9px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; border: none; cursor: pointer;
+  }
+  .boton:hover { background: var(--rojo); }
+  .boton.fantasma { background: transparent; border: 1px solid var(--borde); color: var(--texto); }
+  .boton.fantasma:hover { border-color: var(--rojo); color: var(--rojo); }
+  .botonera { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  .confesion {
+    background: var(--panel); border: 1px solid var(--borde); border-left: 3px solid var(--rojo);
+    border-radius: 12px; padding: 26px 28px; font-size: 15px; color: var(--texto2);
+  }
+  .confesion strong { color: var(--texto); }
+
+  footer { padding: 48px 0 64px; text-align: center; color: var(--texto2); font-size: 13px; font-family: var(--mono); }
+  footer a { color: var(--rojo); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header class="contenedor">
+  <div class="logo">tizzenn / apps</div>
+  <h1>Software libre, hecho<br>a golpe de prompt<span class="cursor">_</span></h1>
+  <p class="tagline">Dos apps Android <em>sin anuncios, sin cuentas, sin telemetría</em> y sin diseñador
+  (se nota). Hechas para resolver problemas reales del que las encarga.</p>
+</header>
+
+<section class="contenedor">
+  <h2>// Las apps</h2>
+  <div class="apps">
+
+    <div class="app">
+      <div class="app-cabecera">
+        <div class="app-icono">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="#EF5350"><path d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/><path d="M14.4 10.2v1.5l2-2-2-2v1.5c-2.21 0-4 1.79-4 4 0 .785.23 1.515.62 2.13l.73-.73c-.225-.415-.35-.895-.35-1.4 0-1.655 1.345-3 3-3zm3.38.87-.73.73c.22.42.35.895.35 1.4 0 1.655-1.345 3-3 3v-1.5l-2 2 2 2v-1.5c2.21 0 4-1.79 4-4 0-.785-.23-1.515-.62-2.13z"/></svg>
+        </div>
+        <div>
+          <h3>Lembra</h3>
+          <div class="que-es">Recordatorios de lo que caduca</div>
+        </div>
+      </div>
+      <ul>
+        <li>Fichas con repetición flexible: cada X días, semanas, meses o años</li>
+        <li>Categorías con icono (coche, casa, niños, mascotas…) reordenables</li>
+        <li>Avisos con antelación configurable, resistentes a reinicios</li>
+        <li>Volcado opcional al calendario del sistema</li>
+        <li>Copia de seguridad exportable a JSON</li>
+        <li>Temas blanco/negro y colores a elegir</li>
+      </ul>
+      <div class="badges"><span class="badge">GPLv3</span><span class="badge">0 permisos raros</span><span class="badge">~2 MB</span></div>
+    </div>
+
+    <div class="app">
+      <div class="app-cabecera">
+        <div class="app-icono">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="#EF5350"><path d="M19 14V6c0-1.1-.9-2-2-2H3C1.9 4 1 4.9 1 6v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zm-2 0H3V6h14v8zm-7-7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm13 0v11c0 1.1-.9 2-2 2H4v-2h17V7h2z"/></svg>
+        </div>
+        <div>
+          <h3>Bote</h3>
+          <div class="que-es">Cuentas de grupo sin discusiones</div>
+        </div>
+      </div>
+      <ul>
+        <li>Eventos con asistentes (de contactos o a mano) y foto</li>
+        <li>Apuntes con categoría, tique fotografiado y presupuesto</li>
+        <li>Reparto por faders deslizantes con porcentajes fijables</li>
+        <li>Informe-balance con totales, transferencias mínimas y candado</li>
+        <li>Sincronización sin servidor: archivo o código QR, con fusión inteligente</li>
+        <li>Modo extorsión opcional: «plata o plomo, me debes 12,50 €»</li>
+      </ul>
+      <div class="badges"><span class="badge">GPLv3</span><span class="badge">sin servidor</span><span class="badge">modo capo incluido</span></div>
+    </div>
+  </div>
+
+  <div class="capturas">
+    <div>
+      <div class="movil">
+        <svg viewBox="0 0 210 380" xmlns="http://www.w3.org/2000/svg">
+          <rect width="210" height="380" fill="#121212"/>
+          <rect width="210" height="44" fill="#1A1A1A"/>
+          <text x="14" y="28" fill="#fff" font-size="14" font-family="sans-serif" font-weight="bold">Mis eventos</text>
+          <g font-family="sans-serif">
+            <rect x="10" y="56" width="190" height="64" rx="10" fill="#1E1E1E"/>
+            <circle cx="40" cy="88" r="18" fill="#EF5350"/>
+            <text x="33" y="93" fill="#fff" font-size="13" font-weight="bold">FV</text>
+            <text x="68" y="82" fill="#ECECEC" font-size="12" font-weight="bold">Finde en la sierra</text>
+            <text x="68" y="99" fill="#9a9aa4" font-size="10">4 asistentes · Total: 236,40 €</text>
+            <rect x="10" y="128" width="190" height="64" rx="10" fill="#1E1E1E"/>
+            <circle cx="40" cy="160" r="18" fill="#7B1FA2"/>
+            <text x="33" y="165" fill="#fff" font-size="13" font-weight="bold">CN</text>
+            <text x="68" y="154" fill="#ECECEC" font-size="12" font-weight="bold">Cena Nochevieja</text>
+            <text x="68" y="171" fill="#9a9aa4" font-size="10">7 asistentes · Total: 412,00 €</text>
+            <text x="152" y="154" fill="#EF5350" font-size="9" font-weight="bold">🔒 Pendiente</text>
+            <rect x="10" y="200" width="190" height="64" rx="10" fill="#1E1E1E"/>
+            <circle cx="40" cy="232" r="18" fill="#00897B"/>
+            <text x="34" y="237" fill="#fff" font-size="13" font-weight="bold">P</text>
+            <text x="68" y="226" fill="#ECECEC" font-size="12" font-weight="bold">Piso playa</text>
+            <text x="68" y="243" fill="#9a9aa4" font-size="10">5 asistentes · Total: 890,15 €</text>
+          </g>
+          <circle cx="176" cy="340" r="22" fill="#B71C1C"/>
+          <text x="169" y="348" fill="#fff" font-size="20">+</text>
+        </svg>
+      </div>
+      <div class="pie-captura">bote · lista de eventos*</div>
+    </div>
+    <div>
+      <div class="movil">
+        <svg viewBox="0 0 210 380" xmlns="http://www.w3.org/2000/svg">
+          <rect width="210" height="380" fill="#121212"/>
+          <rect width="210" height="44" fill="#1A1A1A"/>
+          <text x="14" y="28" fill="#fff" font-size="14" font-family="sans-serif" font-weight="bold">Nuevo apunte</text>
+          <g font-family="sans-serif">
+            <text x="14" y="66" fill="#EF5350" font-size="9" font-weight="bold" letter-spacing="2">REPARTO</text>
+            <g>
+              <text x="14" y="92" fill="#ECECEC" font-size="11">Marta</text>
+              <text x="158" y="92" fill="#ECECEC" font-size="11" font-weight="bold">40%</text>
+              <text x="182" y="93" fill="#EF5350" font-size="11">📌</text>
+              <rect x="14" y="100" width="180" height="4" rx="2" fill="#2a2a31"/>
+              <rect x="14" y="100" width="72" height="4" rx="2" fill="#EF5350"/>
+              <circle cx="86" cy="102" r="7" fill="#EF5350"/>
+            </g>
+            <g>
+              <text x="14" y="136" fill="#ECECEC" font-size="11">Luis</text>
+              <text x="158" y="136" fill="#ECECEC" font-size="11" font-weight="bold">35%</text>
+              <rect x="14" y="144" width="180" height="4" rx="2" fill="#2a2a31"/>
+              <rect x="14" y="144" width="63" height="4" rx="2" fill="#EF5350"/>
+              <circle cx="77" cy="146" r="7" fill="#EF5350"/>
+            </g>
+            <g>
+              <text x="14" y="180" fill="#ECECEC" font-size="11">Sara</text>
+              <text x="158" y="180" fill="#ECECEC" font-size="11" font-weight="bold">25%</text>
+              <rect x="14" y="188" width="180" height="4" rx="2" fill="#2a2a31"/>
+              <rect x="14" y="188" width="45" height="4" rx="2" fill="#EF5350"/>
+              <circle cx="59" cy="190" r="7" fill="#EF5350"/>
+            </g>
+            <rect x="14" y="220" width="86" height="30" rx="6" fill="none" stroke="#EF5350"/>
+            <text x="42" y="240" fill="#EF5350" font-size="12" font-weight="bold">=</text>
+            <rect x="108" y="220" width="86" height="30" rx="6" fill="#B71C1C"/>
+            <text x="138" y="240" fill="#fff" font-size="12" font-weight="bold">%</text>
+            <rect x="14" y="320" width="180" height="36" rx="8" fill="#B71C1C"/>
+            <text x="80" y="343" fill="#fff" font-size="13" font-weight="bold">Guardar</text>
+          </g>
+        </svg>
+      </div>
+      <div class="pie-captura">bote · faders con pin*</div>
+    </div>
+    <div>
+      <div class="movil">
+        <svg viewBox="0 0 210 380" xmlns="http://www.w3.org/2000/svg">
+          <rect width="210" height="380" fill="#121212"/>
+          <rect width="210" height="44" fill="#1A1A1A"/>
+          <text x="14" y="28" fill="#fff" font-size="14" font-family="sans-serif" font-weight="bold">Mis alertas</text>
+          <g font-family="sans-serif">
+            <g transform="translate(10,54)">
+              <rect width="30" height="22" rx="11" fill="#1E1E1E" stroke="#2a2a31"/>
+              <rect x="36" width="30" height="22" rx="11" fill="#1E1E1E" stroke="#1976D2"/>
+              <rect x="72" width="30" height="22" rx="11" fill="#1E1E1E" stroke="#F57C00"/>
+              <rect x="108" width="30" height="22" rx="11" fill="#1E1E1E" stroke="#D81B60"/>
+              <rect x="144" width="30" height="22" rx="11" fill="#1E1E1E" stroke="#00897B"/>
+            </g>
+            <rect x="10" y="90" width="190" height="58" rx="10" fill="#1E1E1E"/>
+            <rect x="10" y="90" width="4" height="58" rx="2" fill="#1976D2"/>
+            <text x="26" y="112" fill="#ECECEC" font-size="12" font-weight="bold">ITV furgoneta</text>
+            <text x="26" y="130" fill="#9a9aa4" font-size="10">cada 12 meses · aviso 15 días antes</text>
+            <rect x="10" y="156" width="190" height="58" rx="10" fill="#1E1E1E"/>
+            <rect x="10" y="156" width="4" height="58" rx="2" fill="#D81B60"/>
+            <text x="26" y="178" fill="#ECECEC" font-size="12" font-weight="bold">Vacuna del peque</text>
+            <text x="26" y="196" fill="#9a9aa4" font-size="10">única · aviso 7 días antes</text>
+            <rect x="10" y="222" width="190" height="58" rx="10" fill="#1E1E1E"/>
+            <rect x="10" y="222" width="4" height="58" rx="2" fill="#F57C00"/>
+            <text x="26" y="244" fill="#ECECEC" font-size="12" font-weight="bold">Revisión caldera</text>
+            <text x="26" y="262" fill="#9a9aa4" font-size="10">cada 2 años · al calendario ✓</text>
+          </g>
+          <circle cx="176" cy="340" r="22" fill="#B71C1C"/>
+          <text x="169" y="348" fill="#fff" font-size="20">+</text>
+        </svg>
+      </div>
+      <div class="pie-captura">lembra · fichas*</div>
+    </div>
+  </div>
+  <p style="text-align:center; color:var(--texto2); font-size:12px; margin-top:14px;">
+    * Ilustraciones aproximadas. La app real es igual pero con tus datos y tus deudas.
+  </p>
+</section>
+
+<section class="contenedor">
+  <h2>// Descargar (de menos a más esfuerzo)</h2>
+  <div class="descarga">
+    <div class="opcion">
+      <div class="nivel">NIVEL 0 · PARA VAGOS ILUSTRADOS</div>
+      <h3>Repositorio F-Droid</h3>
+      <p>Instala <a href="https://f-droid.org" style="color:var(--rojo)">F-Droid</a>, añade este repositorio
+      y las apps aparecen en tu tienda con <strong style="color:var(--texto)">actualizaciones automáticas</strong>.
+      Ajustes → Repositorios → + y pega:</p>
+      <code class="url" id="urlRepo">https://tizzenn.github.io/fdroid/repo</code>
+      <button class="boton" onclick="navigator.clipboard.writeText(document.getElementById('urlRepo').textContent).then(()=>{this.textContent='Copiado ✓'})">Copiar URL</button>
+    </div>
+    <div class="opcion">
+      <div class="nivel">NIVEL 1 · APK A PELO</div>
+      <h3>Desde GitHub Releases</h3>
+      <p>Bájate el APK firmado y ábrelo. Android protestará un poco (activar «orígenes desconocidos»);
+      tú aguanta, que para eso es tu teléfono. Sin actualizaciones automáticas.</p>
+      <div class="botonera">
+        <a class="boton" href="https://github.com/tizzenn/bote/releases/latest">APK de Bote</a>
+        <a class="boton" href="https://github.com/tizzenn/lembra/releases/latest">APK de Lembra</a>
+      </div>
+    </div>
+    <div class="opcion">
+      <div class="nivel">NIVEL 2 · GENTE DE BIEN</div>
+      <h3>Código fuente</h3>
+      <p>Kotlin, Material Design, Room, cero dependencias turbias. GPLv3: haz lo que quieras,
+      pero comparte el código como hacemos nosotros.</p>
+      <div class="botonera">
+        <a class="boton fantasma" href="https://github.com/tizzenn/bote">tizzenn/bote</a>
+        <a class="boton fantasma" href="https://github.com/tizzenn/lembra">tizzenn/lembra</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contenedor">
+  <h2>// Confesión</h2>
+  <div class="confesion">
+    <p>Estas apps se han hecho con <strong>vibe coding del bueno</strong>: un humano con ideas y cero
+    paciencia dictándole features a <strong>Claude</strong>, una IA que no puede sindicarse, no cobra
+    horas extra y compila a la primera un 80% de las veces (el otro 20% también lo arregla ella,
+    con la dignidad intacta).</p>
+    <p style="margin-top:12px">Cada release ha calentado un centro de datos que a su vez calienta el planeta,
+    así que ahórranos la parte de la culpa: usa las apps, que al menos el CO₂ haya servido para
+    saber quién debe 12,50 € del finde. <strong>Sin anuncios, sin cuentas, sin rastreo.</strong>
+    El único que sabe tus deudas eres tú. Y tus acreedores.</p>
+  </div>
+</section>
+
+<footer class="contenedor">
+  hecho por <a href="https://github.com/tizzenn">tizzenn</a> + claude · GPLv3 ·
+  <a href="https://tizzenn.github.io/fdroid/repo">repo f-droid</a> ·
+  ningún diseñador fue consultado durante la producción de esta página
+</footer>
+
+</body>
+</html>
