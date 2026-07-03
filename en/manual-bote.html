@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bote manual · tizzenn</title>
+<meta name="description" content="Bote user guide: how to keep a group's account, entries, fader-based split, report and sync, field by field.">
+<style>
+  :root {
+    --negro: #111114;
+    --panel: #1a1a1f;
+    --borde: #2a2a31;
+    --rojo: #EF5350;
+    --rojo-oscuro: #B71C1C;
+    --texto: #e8e8ec;
+    --texto2: #9a9aa4;
+    --mono: ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--negro);
+    color: var(--texto);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.65;
+  }
+  .contenedor { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+  header { padding: 40px 0 24px; position: relative; }
+  .idiomas { position: absolute; top: 18px; right: 24px; font-family: var(--mono); font-size: 13px; }
+  .idiomas a { color: var(--texto2); text-decoration: none; }
+  .idiomas a:hover { color: var(--rojo); }
+  .idiomas .activo { color: var(--rojo); }
+  .migas { font-family: var(--mono); font-size: 13px; color: var(--texto2); margin-bottom: 22px; }
+  .migas a { color: var(--texto2); text-decoration: none; }
+  .migas a:hover { color: var(--rojo); }
+  .titulo-app { display: flex; align-items: center; gap: 14px; }
+  .app-icono { width: 52px; height: 52px; border-radius: 13px; background: #1A1A1A; display: flex; align-items: center; justify-content: center; border: 1px solid var(--borde); flex-shrink: 0; }
+  h1 { font-size: clamp(30px, 5vw, 44px); font-weight: 800; letter-spacing: -1px; }
+  .subtitulo { color: var(--texto2); font-size: 16px; }
+  .intro { color: var(--texto2); font-size: 16px; margin-top: 20px; border-left: 3px solid var(--rojo); padding-left: 16px; }
+  .intro strong { color: var(--texto); }
+
+  section { padding: 28px 0; border-top: 1px solid var(--borde); }
+  section:first-of-type { border-top: none; }
+  h2 { font-family: var(--mono); font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--rojo); margin-bottom: 16px; }
+  h3 { font-size: 19px; margin: 22px 0 10px; }
+  p { margin-bottom: 12px; }
+  p, li { color: #cfcfd6; font-size: 15.5px; }
+  ul, ol { margin: 0 0 12px 22px; }
+  li { padding: 3px 0; }
+  strong { color: var(--texto); }
+  code { font-family: var(--mono); font-size: 0.9em; background: #0c0c0f; border: 1px solid var(--borde); border-radius: 5px; padding: 1px 6px; color: var(--texto); }
+
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 16px; font-size: 15px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--borde); vertical-align: top; }
+  th { font-family: var(--mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--texto2); }
+  td:first-child { color: var(--texto); font-weight: 600; }
+  td:first-child { width: 30%; }
+
+  .empollon {
+    background: linear-gradient(180deg, #16161b, var(--panel));
+    border: 1px solid var(--borde); border-left: 3px solid var(--rojo);
+    border-radius: 12px; padding: 20px 22px; margin: 18px 0;
+  }
+  .empollon .eti { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--rojo); display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .empollon .eti .cara { font-size: 18px; }
+  .empollon p:last-child { margin-bottom: 0; }
+  .empollon p { color: var(--texto2); font-size: 15px; }
+  .empollon strong { color: var(--texto); }
+
+  .cta { display: inline-block; margin-top: 8px; background: var(--rojo-oscuro); color: #fff; text-decoration: none; padding: 9px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; }
+  .cta:hover { background: var(--rojo); }
+
+  footer { padding: 40px 0 64px; text-align: center; color: var(--texto2); font-size: 13px; font-family: var(--mono); border-top: 1px solid var(--borde); margin-top: 20px; }
+  footer a { color: var(--rojo); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header class="contenedor">
+  <nav class="idiomas"><a href="../manual-bote.html">ES</a> · <span class="activo">EN</span></nav>
+  <div class="migas"><a href="./">tizzenn / apps</a> / manual / bote</div>
+  <div class="titulo-app">
+    <div class="app-icono">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="#EF5350"><path d="M19 14V6c0-1.1-.9-2-2-2H3C1.9 4 1 4.9 1 6v8c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zm-2 0H3V6h14v8zm-7-7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm13 0v11c0 1.1-.9 2-2 2H4v-2h17V7h2z"/></svg>
+    </div>
+    <div>
+      <h1>Bote manual</h1>
+      <div class="subtitulo">Group expenses without arguments</div>
+    </div>
+  </div>
+  <p class="intro">Bote keeps a group's account when they get together for something (a weekend, a dinner,
+  a holiday flat): who puts in money, what they spend it on, how it splits and, at the end,
+  <strong>who pays how much to whom</strong> with the fewest possible transfers. No account or internet:
+  each phone keeps its own copy and they pass the event between them.</p>
+</header>
+
+<section class="contenedor">
+  <h2>// The main screen</h2>
+  <p>"My events" is the list of your events. Each card shows the photo, the title, the number of attendees
+  and the total spent, and whether it is <em>Pending settlement</em> or <em>Settled</em>.</p>
+  <ul>
+    <li><strong>Filters</strong>: Active, Settled or All.</li>
+    <li><strong>Sort</strong> (menu): by date, recent creation, number of attendees or most expensive.</li>
+    <li><strong><code>+</code></strong>: create a new event.</li>
+    <li><strong>Import event</strong>: receive one someone sends you by file or QR.</li>
+  </ul>
+  <p>When you pay your share of an event, it disappears from your list; the creator keeps seeing it until
+  <strong>everyone</strong> has settled and it reaches zero.</p>
+</section>
+
+<section class="contenedor">
+  <h2>// Step 1 · Create the event</h2>
+  <table>
+    <tr><th>Field</th><th>What it's for</th></tr>
+    <tr><td>Photo (optional)</td><td>An avatar to recognize the event at a glance.</td></tr>
+    <tr><td>Title / Description (optional)</td><td>"Weekend in the mountains", plus a note if needed.</td></tr>
+    <tr><td>Date</td><td>The day of the event (required).</td></tr>
+    <tr><td>Location (optional)</td><td>Address or place; can later be opened on the map.</td></tr>
+    <tr><td>Mode</td><td><em>Restricted</em>: only you (creator-admin) modify and add entries. <em>Collaborative</em>: anyone in the group can.</td></tr>
+    <tr><td>Sync</td><td>How the event travels between phones: Local, Default or Other (see below).</td></tr>
+  </table>
+  <p><strong>Attendees</strong>: add them <em>From contacts</em> or <em>By hand</em> (name and,
+  optionally, phone and email). Each gets an avatar with their initials and a fixed color. You appear as
+  <em>Me</em>.</p>
+
+  <div class="empollon">
+    <div class="eti"><span class="cara">🤓</span> Nerd note — adding someone who joins the party late</div>
+    <p>If you add a person when the event <strong>already has expenses recorded</strong>, Bote asks: do
+    they take on the costs <em>from the beginning</em> or <em>only from now</em>? "From the beginning" (in
+    solidarity) puts them in the split for everything so far, as if they'd been there from minute one.
+    "Only from now" sets their tab to zero and they only enter what's recorded from that point on — handy
+    for the one who joins on day two. You don't need to understand the formula: you just decide whether
+    they chip in for the earlier stuff or not.</p>
+  </div>
+</section>
+
+<section class="contenedor">
+  <h2>// Step 2 · Record the expenses</h2>
+  <p>An <strong>entry</strong> is one thing paid for by a <strong>single person</strong> (the meal, the
+  lodging, the fuel…) and later split among whoever is due to share it.</p>
+  <table>
+    <tr><th>Field</th><th>What it's for</th></tr>
+    <tr><td>Concept</td><td>What it is: "Saturday dinner", "Fuel".</td></tr>
+    <tr><td>Who pays</td><td>The attendee who put the money down out of pocket.</td></tr>
+    <tr><td>Category</td><td>Restaurant, drinks, gift, supermarket, lodging, fuel, substances, cash or other. Drives the icon and the report breakdown.</td></tr>
+    <tr><td>Budgeted (optional)</td><td>What you expected to spend; just a guide.</td></tr>
+    <tr><td>Spent (required)</td><td>What it actually cost.</td></tr>
+    <tr><td>Paid</td><td>How much of that entry has already been settled. Must be complete to "close" the entry and, ultimately, close the account.</td></tr>
+    <tr><td>Receipt (photo, optional)</td><td>Photo of the receipt to check amounts. Stored only on your phone; it does not travel in the sync.</td></tr>
+  </table>
+
+  <h3>Split</h3>
+  <p>At the bottom you choose how that entry is divided:</p>
+  <ul>
+    <li><strong>Equal shares (<code>=</code>)</strong>: mark who takes part and it splits evenly among them.</li>
+    <li><strong>Percentages (<code>%</code>)</strong>: each participant has a <strong>fader</strong>
+      (slider). The <strong>pin 📌</strong> locks their percentage so it won't change; when you move
+      another fader, Bote splits the rest only among the open ones. That way you can say "Marta pays a
+      fixed 40% and the rest split evenly" without doing the maths.</li>
+  </ul>
+</section>
+
+<section class="contenedor">
+  <h2>// Step 3 · Report and closing the account</h2>
+  <ul>
+    <li><strong>Report</strong>: at any time you see the <em>provisional report</em> with the balance
+      (who has paid, how much is due, whether they get money back or owe it), the breakdown by category
+      with bars and the <strong>who pays whom</strong> section with the minimum transfers to settle.</li>
+    <li><strong>Close the account</strong> (lock): when there will be no more expenses. Generates the
+      <em>definitive report</em> and no more entries can be added (it requires every entry to have its
+      amount paid). You can <em>Reopen</em> it.</li>
+    <li><strong>Has settled</strong>: each person marks when they pay. When you settle your share, the
+      event leaves your list.</li>
+    <li><strong>Calendar</strong>: a button to add the event date to the Android calendar.</li>
+  </ul>
+
+  <div class="empollon">
+    <div class="eti"><span class="cara">🤓</span> Nerd note — "extortion mode" (optional, off by default)</div>
+    <p>In Settings you can turn on <em>"your money or your life"</em> mode. When it's on, a button appears
+    in the report that <strong>drafts the collection message on its own</strong> for each person who owes
+    you money, from a template you edit. It uses the placeholders <code>{name}</code>,
+    <code>{amount}</code>, <code>{event}</code> and <code>{phone}</code> (yours, so they can pay you) and
+    Bote fills them with the real data. It doesn't charge or send anything by itself: it just leaves the
+    text ready to send over WhatsApp. A joke with a purpose: it saves typing "hey, you owe me €12.50"
+    fifteen times.</p>
+  </div>
+</section>
+
+<section class="contenedor">
+  <h2>// Sharing and syncing</h2>
+  <p>For the group to have the same account, the event has to be passed between phones. Bote merges it
+  <strong>entry by entry</strong>, so it doesn't matter who records what on their phone: when you bring
+  them together, nothing is lost or duplicated.</p>
+  <ul>
+    <li><strong>By QR or file</strong> (no server): the other person receives it by scanning the QR in
+      person or opening the file (WhatsApp, email…). On import, Bote asks who they are in that event.</li>
+    <li><strong>Automatic via the cloud</strong> (optional): see below.</li>
+  </ul>
+
+  <div class="empollon">
+    <div class="eti"><span class="cara">🤓</span> Nerd note — how two phones merge without fighting</div>
+    <p>Each entry has a unique identifier and a timestamp. When you import an event, Bote doesn't overwrite
+    it: it compares entry by entry and <strong>keeps the most recently modified version</strong>. "I've
+    paid" marks are never lost, and if someone deleted an entry, it doesn't "come back to life" on sync (a
+    <em>tombstone</em> is kept remembering it was deleted). The activity log also merges without repeating
+    lines. In practice: everyone records their stuff whenever they like, and when you sync the account ends
+    up complete and consistent with nothing to redo. Receipt photos are the only thing that doesn't travel.</p>
+  </div>
+
+  <div class="empollon">
+    <div class="eti"><span class="cara">🤓</span> Nerd note — automatic cloud sync (optional)</div>
+    <p>Bote can sync on its own over the internet, but <strong>you provide the server</strong>: there's no
+    central account and no one who sees your data. Someone in the group creates a free project on
+    <a href="https://supabase.com" style="color:var(--rojo)">Supabase</a> (or uses any PostgREST of their
+    own), pastes in a table and copies two things (a URL and a key). From then on the event uploads and
+    downloads on its own, but <strong>the merge is still local</strong> (the same logic as the QR); the
+    server is just a mailbox.</p>
+    <p>The convenient part: <strong>only the event's creator configures it</strong>, and that configuration
+    <strong>travels inside the event</strong> when shared. Everyone else, on importing by QR or file, ends
+    up connected <strong>without typing anything</strong>. Each group can have its own server. Honest
+    warning: whoever has the key can read that table, so only share it with your group.</p>
+  </div>
+
+  <div class="empollon">
+    <div class="eti"><span class="cara">🤓</span> Nerd note — payment detection from notifications (optional)</div>
+    <p>In Settings → <em>Payment detector</em> you can give Bote access to read the phone's notifications.
+    What for? When a notification arrives from your bank that looks like a purchase (a charge with an
+    amount and a merchant), Bote offers to <strong>record it as an expense with the amount and merchant
+    already filled in</strong>: you just choose which event it goes to and confirm. It's optional and
+    <strong>off by default</strong>. For your peace of mind: <strong>everything is processed inside your
+    phone</strong>, nothing is sent to any server; it simply saves you typing in the amount of what you
+    just paid by card. It requires Android's notification access, which you can revoke whenever you want.</p>
+  </div>
+</section>
+
+<section class="contenedor">
+  <h2>// Settings (summary)</h2>
+  <ul>
+    <li><strong>Theme</strong> (white / black / system) and primary and accent <strong>colors</strong> (black and red by default).</li>
+    <li><strong>Notifications</strong>: reminder on the day of the event, alert when an account is closed and pending-payment reminder.</li>
+    <li><strong>Extortion mode</strong> and its message template.</li>
+    <li><strong>Payment detector</strong> (notification access).</li>
+    <li><strong>Default sync server</strong> (URL and key for your usual group).</li>
+  </ul>
+  <a class="cta" href="./#descargar">Download Bote</a>
+</section>
+
+<footer class="contenedor">
+  <a href="./">← back to the apps</a> · made by <a href="https://github.com/tizzenn">tizzenn</a> + claude · GPLv3
+</footer>
+
+</body>
+</html>

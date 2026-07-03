@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manual de Lembra · tizzenn</title>
+<meta name="description" content="Manual de usuario de Lembra: cómo crear fichas de recordatorios recurrentes, cada campo y cada opción explicados.">
+<style>
+  :root {
+    --negro: #111114;
+    --panel: #1a1a1f;
+    --borde: #2a2a31;
+    --rojo: #EF5350;
+    --rojo-oscuro: #B71C1C;
+    --texto: #e8e8ec;
+    --texto2: #9a9aa4;
+    --mono: ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--negro);
+    color: var(--texto);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.65;
+  }
+  .contenedor { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+  header { padding: 40px 0 24px; position: relative; }
+  .idiomas { position: absolute; top: 18px; right: 24px; font-family: var(--mono); font-size: 13px; }
+  .idiomas a { color: var(--texto2); text-decoration: none; }
+  .idiomas a:hover { color: var(--rojo); }
+  .idiomas .activo { color: var(--rojo); }
+  .migas { font-family: var(--mono); font-size: 13px; color: var(--texto2); margin-bottom: 22px; }
+  .migas a { color: var(--texto2); text-decoration: none; }
+  .migas a:hover { color: var(--rojo); }
+  .titulo-app { display: flex; align-items: center; gap: 14px; }
+  .app-icono { width: 52px; height: 52px; border-radius: 13px; background: #1A1A1A; display: flex; align-items: center; justify-content: center; border: 1px solid var(--borde); flex-shrink: 0; }
+  h1 { font-size: clamp(30px, 5vw, 44px); font-weight: 800; letter-spacing: -1px; }
+  .subtitulo { color: var(--texto2); font-size: 16px; }
+  .intro { color: var(--texto2); font-size: 16px; margin-top: 20px; border-left: 3px solid var(--rojo); padding-left: 16px; }
+  .intro strong { color: var(--texto); }
+
+  section { padding: 28px 0; border-top: 1px solid var(--borde); }
+  section:first-of-type { border-top: none; }
+  h2 { font-family: var(--mono); font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--rojo); margin-bottom: 16px; }
+  h3 { font-size: 19px; margin: 22px 0 10px; }
+  p { margin-bottom: 12px; }
+  p, li { color: #cfcfd6; font-size: 15.5px; }
+  ul, ol { margin: 0 0 12px 22px; }
+  li { padding: 3px 0; }
+  strong { color: var(--texto); }
+  code { font-family: var(--mono); font-size: 0.9em; background: #0c0c0f; border: 1px solid var(--borde); border-radius: 5px; padding: 1px 6px; color: var(--texto); }
+
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 16px; font-size: 15px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--borde); vertical-align: top; }
+  th { font-family: var(--mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--texto2); }
+  td:first-child { color: var(--texto); font-weight: 600; white-space: nowrap; }
+  td:first-child { width: 34%; }
+
+  .empollon {
+    background: linear-gradient(180deg, #16161b, var(--panel));
+    border: 1px solid var(--borde); border-left: 3px solid var(--rojo);
+    border-radius: 12px; padding: 20px 22px; margin: 18px 0;
+  }
+  .empollon .eti { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--rojo); display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .empollon .eti .cara { font-size: 18px; }
+  .empollon p:last-child { margin-bottom: 0; }
+  .empollon p { color: var(--texto2); font-size: 15px; }
+  .empollon strong { color: var(--texto); }
+
+  .cta { display: inline-block; margin-top: 8px; background: var(--rojo-oscuro); color: #fff; text-decoration: none; padding: 9px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; }
+  .cta:hover { background: var(--rojo); }
+
+  footer { padding: 40px 0 64px; text-align: center; color: var(--texto2); font-size: 13px; font-family: var(--mono); border-top: 1px solid var(--borde); margin-top: 20px; }
+  footer a { color: var(--rojo); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header class="contenedor">
+  <nav class="idiomas"><span class="activo">ES</span> · <a href="en/manual-lembra.html">EN</a></nav>
+  <div class="migas"><a href="./">tizzenn / apps</a> / manual / lembra</div>
+  <div class="titulo-app">
+    <div class="app-icono">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="#EF5350"><path d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/><path d="M14.4 10.2v1.5l2-2-2-2v1.5c-2.21 0-4 1.79-4 4 0 .785.23 1.515.62 2.13l.73-.73c-.225-.415-.35-.895-.35-1.4 0-1.655 1.345-3 3-3zm3.38.87-.73.73c.22.42.35.895.35 1.4 0 1.655-1.345 3-3 3v-1.5l-2 2 2 2v-1.5c2.21 0 4-1.79 4-4 0-.785-.23-1.515-.62-2.13z"/></svg>
+    </div>
+    <div>
+      <h1>Manual de Lembra</h1>
+      <div class="subtitulo">Recordatorios de lo que caduca</div>
+    </div>
+  </div>
+  <p class="intro">Lembra es una libreta de avisos: creas una <strong>ficha</strong> por cada cosa que
+  caduca o hay que renovar (el seguro, la ITV, una vacuna) y la app te avisa sola con la antelación que
+  le digas. Sin registrarse, sin internet y sin enviar nada a ningún sitio.</p>
+</header>
+
+<section class="contenedor">
+  <h2>// La pantalla principal</h2>
+  <p>Al abrir la app ves «Mis alertas», la lista de todas tus fichas. Cada tarjeta muestra el título,
+  cuándo es el <strong>próximo aviso</strong> y cuántas repeticiones quedan («Quedan 3 de 12», o
+  «Finalizada» cuando ya han pasado todas).</p>
+  <ul>
+    <li><strong>Filtro por categoría</strong> (fila de arriba): toca <em>Todas</em> o una categoría
+      para ver solo esas fichas.</li>
+    <li><strong>Botón <code>+</code></strong> (abajo a la derecha): crear una ficha nueva.</li>
+    <li><strong>Toca una tarjeta</strong> para editarla.</li>
+    <li><strong>Menú ⋮ → Ajustes</strong>: apariencia, orden de categorías y copia de seguridad.</li>
+  </ul>
+</section>
+
+<section class="contenedor">
+  <h2>// Crear o editar una ficha</h2>
+  <p>El botón <code>+</code> abre el formulario, dividido en secciones. Campo por campo:</p>
+
+  <h3>Datos básicos</h3>
+  <table>
+    <tr><th>Campo</th><th>Para qué sirve</th></tr>
+    <tr><td>Título</td><td>El nombre del aviso: «ITV del coche», «Seguro del hogar», «Vacuna del perro». Es lo único obligatorio junto con la fecha.</td></tr>
+    <tr><td>Categoría</td><td>Coche, Moto, Casa, Mascotas, Niños, Documentación, Licencias o Varios. Solo sirve para el icono y para poder filtrar; elige la que más se acerque.</td></tr>
+  </table>
+
+  <h3>Cuándo</h3>
+  <table>
+    <tr><th>Campo</th><th>Para qué sirve</th></tr>
+    <tr><td>Fecha de inicio</td><td>El día del primer vencimiento. A partir de aquí Lembra calcula todos los siguientes.</td></tr>
+    <tr><td>Hora (opcional)</td><td>Si te da igual la hora, déjalo en «Sin hora» y avisará por la mañana. Ponla si el aviso debe caer a una hora concreta.</td></tr>
+    <tr><td>Ubicación (opcional)</td><td>Un texto libre (dirección, taller, clínica). Solo informativo.</td></tr>
+  </table>
+
+  <h3>Repetición</h3>
+  <table>
+    <tr><th>Campo</th><th>Para qué sirve</th></tr>
+    <tr><td>Repetir cada + Unidad</td><td>Cada cuánto se repite: «cada 1 año» para la ITV, «cada 6 meses» para una revisión. La unidad puede ser Días, Semanas, Meses o Años.</td></tr>
+    <tr><td>Número de repeticiones</td><td>Cuántas veces en total. Pon 1 para un aviso único (una vacuna que no se repite); pon 12 para doce ocurrencias.</td></tr>
+    <tr><td>Avisar con antelación (días)</td><td>Cuántos días antes quieres el aviso. Con «15» te avisa 15 días antes de <strong>cada</strong> vencimiento, no solo del primero.</td></tr>
+  </table>
+
+  <h3>Detalles</h3>
+  <table>
+    <tr><th>Campo</th><th>Para qué sirve</th></tr>
+    <tr><td>Notas (opcional)</td><td>Cualquier apunte: número de póliza, teléfono del taller, lo que sea.</td></tr>
+  </table>
+
+  <p>Cuando guardas, Lembra programa automáticamente todos los avisos. Si más tarde editas la ficha,
+  cancela los antiguos y los reprograma; si la eliminas, los borra. El botón <strong>Eliminar</strong>
+  está dentro del formulario de edición.</p>
+
+  <div class="empollon">
+    <div class="eti"><span class="cara">🤓</span> Dato avanzado — cómo te avisa aunque no abras la app</div>
+    <p>Lembra no necesita estar abierta ni funcionando en segundo plano. Cuando guardas una ficha,
+    «deja pedida» cada notificación al reloj del propio Android (el mismo mecanismo de una alarma del
+    despertador). Por eso los avisos <strong>sobreviven a apagar y encender el móvil</strong>: al
+    reiniciarse, Lembra vuelve a dejar pedidos todos los avisos pendientes.</p>
+    <p>Programa <strong>un aviso por cada repetición</strong>, no solo el próximo: si algo se repite
+    doce veces, deja las doce alarmas puestas. En móviles con ahorro de batería muy agresivo el aviso
+    podría llegar con unos minutos de retraso; para vencimientos eso da igual. Si quieres máxima
+    puntualidad, dile al sistema que no optimice la batería de Lembra.</p>
+  </div>
+
+  <div class="empollon">
+    <div class="eti"><span class="cara">🤓</span> Dato avanzado — volcar los avisos al calendario</div>
+    <p>En la sección <em>Calendario del sistema</em> puedes activar <strong>«Añadir al calendario del
+    móvil»</strong>. Si lo enciendes, además del aviso propio de Lembra, la app crea <strong>un evento
+    real en tu calendario</strong> (Google Calendar, el del fabricante…) por cada repetición, con su
+    propio recordatorio y la ubicación. Eliges dónde escribir con «Calendario de destino».</p>
+    <p>¿Para qué? Para que el aviso también salga en el calendario que compartes o ves en el ordenador,
+    no solo como notificación. La primera vez pedirá permiso de calendario. Lo bueno: Lembra manda en
+    esos eventos — si editas o borras la ficha, sus eventos del calendario <strong>se regeneran o se
+    borran solos</strong>, sin limpiar nada a mano. Si lo dejas apagado, solo avisa la propia Lembra.</p>
+  </div>
+</section>
+
+<section class="contenedor">
+  <h2>// Ajustes</h2>
+  <ul>
+    <li><strong>Tema</strong>: Blanco, Negro o Sistema (sigue el modo claro/oscuro del móvil).</li>
+    <li><strong>Color principal</strong> y <strong>de acento</strong>: por defecto los corporativos
+      (negro y rojo); también azul, verde, morado, teal, naranja o rosa.</li>
+    <li><strong>Orden de categorías</strong>: súbelas o bájalas para el filtro.</li>
+    <li><strong>Copia de seguridad</strong>: <em>Exportar</em> guarda todas tus fichas en un archivo;
+      <em>Importar</em> las recupera en otro móvil o tras reinstalar.</li>
+  </ul>
+  <a class="cta" href="./#descargar">Descargar Lembra</a>
+</section>
+
+<footer class="contenedor">
+  <a href="./">← volver a las apps</a> · hecho por <a href="https://github.com/tizzenn">tizzenn</a> + claude · GPLv3
+</footer>
+
+</body>
+</html>

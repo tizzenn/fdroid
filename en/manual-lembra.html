@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lembra manual · tizzenn</title>
+<meta name="description" content="Lembra user guide: how to create recurring reminder records, every field and option explained.">
+<style>
+  :root {
+    --negro: #111114;
+    --panel: #1a1a1f;
+    --borde: #2a2a31;
+    --rojo: #EF5350;
+    --rojo-oscuro: #B71C1C;
+    --texto: #e8e8ec;
+    --texto2: #9a9aa4;
+    --mono: ui-monospace, "Cascadia Code", "JetBrains Mono", Consolas, monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--negro);
+    color: var(--texto);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.65;
+  }
+  .contenedor { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+  header { padding: 40px 0 24px; position: relative; }
+  .idiomas { position: absolute; top: 18px; right: 24px; font-family: var(--mono); font-size: 13px; }
+  .idiomas a { color: var(--texto2); text-decoration: none; }
+  .idiomas a:hover { color: var(--rojo); }
+  .idiomas .activo { color: var(--rojo); }
+  .migas { font-family: var(--mono); font-size: 13px; color: var(--texto2); margin-bottom: 22px; }
+  .migas a { color: var(--texto2); text-decoration: none; }
+  .migas a:hover { color: var(--rojo); }
+  .titulo-app { display: flex; align-items: center; gap: 14px; }
+  .app-icono { width: 52px; height: 52px; border-radius: 13px; background: #1A1A1A; display: flex; align-items: center; justify-content: center; border: 1px solid var(--borde); flex-shrink: 0; }
+  h1 { font-size: clamp(30px, 5vw, 44px); font-weight: 800; letter-spacing: -1px; }
+  .subtitulo { color: var(--texto2); font-size: 16px; }
+  .intro { color: var(--texto2); font-size: 16px; margin-top: 20px; border-left: 3px solid var(--rojo); padding-left: 16px; }
+  .intro strong { color: var(--texto); }
+
+  section { padding: 28px 0; border-top: 1px solid var(--borde); }
+  section:first-of-type { border-top: none; }
+  h2 { font-family: var(--mono); font-size: 13px; letter-spacing: 3px; text-transform: uppercase; color: var(--rojo); margin-bottom: 16px; }
+  h3 { font-size: 19px; margin: 22px 0 10px; }
+  p { margin-bottom: 12px; }
+  p, li { color: #cfcfd6; font-size: 15.5px; }
+  ul, ol { margin: 0 0 12px 22px; }
+  li { padding: 3px 0; }
+  strong { color: var(--texto); }
+  code { font-family: var(--mono); font-size: 0.9em; background: #0c0c0f; border: 1px solid var(--borde); border-radius: 5px; padding: 1px 6px; color: var(--texto); }
+
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 16px; font-size: 15px; }
+  th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--borde); vertical-align: top; }
+  th { font-family: var(--mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--texto2); }
+  td:first-child { color: var(--texto); font-weight: 600; white-space: nowrap; }
+  td:first-child { width: 34%; }
+
+  .empollon {
+    background: linear-gradient(180deg, #16161b, var(--panel));
+    border: 1px solid var(--borde); border-left: 3px solid var(--rojo);
+    border-radius: 12px; padding: 20px 22px; margin: 18px 0;
+  }
+  .empollon .eti { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--rojo); display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .empollon .eti .cara { font-size: 18px; }
+  .empollon p:last-child { margin-bottom: 0; }
+  .empollon p { color: var(--texto2); font-size: 15px; }
+  .empollon strong { color: var(--texto); }
+
+  .cta { display: inline-block; margin-top: 8px; background: var(--rojo-oscuro); color: #fff; text-decoration: none; padding: 9px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; }
+  .cta:hover { background: var(--rojo); }
+
+  footer { padding: 40px 0 64px; text-align: center; color: var(--texto2); font-size: 13px; font-family: var(--mono); border-top: 1px solid var(--borde); margin-top: 20px; }
+  footer a { color: var(--rojo); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header class="contenedor">
+  <nav class="idiomas"><a href="../manual-lembra.html">ES</a> · <span class="activo">EN</span></nav>
+  <div class="migas"><a href="./">tizzenn / apps</a> / manual / lembra</div>
+  <div class="titulo-app">
+    <div class="app-icono">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="#EF5350"><path d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/><path d="M14.4 10.2v1.5l2-2-2-2v1.5c-2.21 0-4 1.79-4 4 0 .785.23 1.515.62 2.13l.73-.73c-.225-.415-.35-.895-.35-1.4 0-1.655 1.345-3 3-3zm3.38.87-.73.73c.22.42.35.895.35 1.4 0 1.655-1.345 3-3 3v-1.5l-2 2 2 2v-1.5c2.21 0 4-1.79 4-4 0-.785-.23-1.515-.62-2.13z"/></svg>
+    </div>
+    <div>
+      <h1>Lembra manual</h1>
+      <div class="subtitulo">Reminders for things that expire</div>
+    </div>
+  </div>
+  <p class="intro">Lembra is a notebook of alerts: you create one <strong>record</strong> for each thing
+  that expires or needs renewing (insurance, the vehicle inspection, a vaccine) and the app reminds you
+  on its own with as much lead time as you tell it. No sign-up, no internet, nothing sent anywhere.</p>
+</header>
+
+<section class="contenedor">
+  <h2>// The main screen</h2>
+  <p>Opening the app shows "My alerts", the list of all your records. Each card shows the title, when the
+  <strong>next alert</strong> is, and how many repetitions are left ("3 of 12 left", or "Finished" once
+  they have all passed).</p>
+  <ul>
+    <li><strong>Category filter</strong> (top row): tap <em>All</em> or a category to see only those records.</li>
+    <li><strong><code>+</code> button</strong> (bottom right): create a new record.</li>
+    <li><strong>Tap a card</strong> to edit it.</li>
+    <li><strong>⋮ menu → Settings</strong>: appearance, category order and backup.</li>
+  </ul>
+</section>
+
+<section class="contenedor">
+  <h2>// Creating or editing a record</h2>
+  <p>The <code>+</code> button opens the form, split into sections. Field by field:</p>
+
+  <h3>Basics</h3>
+  <table>
+    <tr><th>Field</th><th>What it's for</th></tr>
+    <tr><td>Title</td><td>The name of the alert: "Car inspection", "Home insurance", "Dog's vaccine". The only required field along with the date.</td></tr>
+    <tr><td>Category</td><td>Car, Motorbike, Home, Pets, Kids, Documents, Licences or Miscellaneous. It only sets an icon and lets you filter; pick the closest one.</td></tr>
+  </table>
+
+  <h3>When</h3>
+  <table>
+    <tr><th>Field</th><th>What it's for</th></tr>
+    <tr><td>Start date</td><td>The day of the first due date. From here Lembra works out all the following ones.</td></tr>
+    <tr><td>Time (optional)</td><td>If the time doesn't matter, leave it on "No time" and it will alert in the morning. Set it if the alert must land at a specific hour.</td></tr>
+    <tr><td>Location (optional)</td><td>Free text (address, garage, clinic). Purely informational.</td></tr>
+  </table>
+
+  <h3>Repetition</h3>
+  <table>
+    <tr><th>Field</th><th>What it's for</th></tr>
+    <tr><td>Repeat every + Unit</td><td>How often it repeats: "every 1 year" for the inspection, "every 6 months" for a service. The unit can be Days, Weeks, Months or Years.</td></tr>
+    <tr><td>Number of repetitions</td><td>How many times in total. Set 1 for a one-off alert (a vaccine that doesn't repeat); set 12 for twelve occurrences.</td></tr>
+    <tr><td>Advance notice (days)</td><td>How many days before you want the alert. With "15" it warns you 15 days before <strong>each</strong> due date, not just the first.</td></tr>
+  </table>
+
+  <h3>Details</h3>
+  <table>
+    <tr><th>Field</th><th>What it's for</th></tr>
+    <tr><td>Notes (optional)</td><td>Any note: policy number, garage phone, whatever.</td></tr>
+  </table>
+
+  <p>When you save, Lembra automatically schedules all the alerts. If you later edit the record, it
+  cancels the old ones and reschedules them; if you delete it, they are removed. The
+  <strong>Delete</strong> button is inside the edit form.</p>
+
+  <div class="empollon">
+    <div class="eti"><span class="cara">🤓</span> Nerd note — how it alerts you even if you don't open the app</div>
+    <p>Lembra doesn't need to be open or running in the background. When you save a record, it "hands off"
+    each notification to Android's own clock (the same mechanism an alarm-clock alarm uses). That's why
+    the alerts <strong>survive turning the phone off and on</strong>: on reboot, Lembra re-registers every
+    pending alert.</p>
+    <p>It schedules <strong>one alert per repetition</strong>, not just the next one: if something repeats
+    twelve times, it sets all twelve alarms. On phones with very aggressive battery saving the alert could
+    arrive a few minutes late; for expiry dates that's irrelevant. If you want maximum punctuality, tell
+    the system not to optimize Lembra's battery.</p>
+  </div>
+
+  <div class="empollon">
+    <div class="eti"><span class="cara">🤓</span> Nerd note — dumping the alerts into your calendar</div>
+    <p>In the <em>System calendar</em> section you can turn on <strong>"Add to the phone's
+    calendar"</strong>. If you enable it, in addition to Lembra's own alert, the app creates <strong>a real
+    event in your calendar</strong> (Google Calendar, the manufacturer's…) for each repetition, with its
+    own reminder and the location. You choose where to write with "Target calendar".</p>
+    <p>What for? So the alert also shows up in the calendar you share or view on your computer, not just as
+    a notification. The first time it will ask for calendar permission. The nice part: Lembra is in charge
+    of those events — if you edit or delete the record, its calendar events <strong>regenerate or delete
+    themselves</strong>, with nothing to clean up by hand. If you leave it off, only Lembra itself alerts you.</p>
+  </div>
+</section>
+
+<section class="contenedor">
+  <h2>// Settings</h2>
+  <ul>
+    <li><strong>Theme</strong>: White, Black or System (follows the phone's light/dark mode).</li>
+    <li><strong>Primary</strong> and <strong>accent color</strong>: corporate defaults (black and red);
+      also blue, green, purple, teal, orange or pink.</li>
+    <li><strong>Category order</strong>: move them up or down for the filter.</li>
+    <li><strong>Backup</strong>: <em>Export</em> saves all your records to a file; <em>Import</em>
+      restores them on another phone or after reinstalling.</li>
+  </ul>
+  <a class="cta" href="./#descargar">Download Lembra</a>
+</section>
+
+<footer class="contenedor">
+  <a href="./">← back to the apps</a> · made by <a href="https://github.com/tizzenn">tizzenn</a> + claude · GPLv3
+</footer>
+
+</body>
+</html>
