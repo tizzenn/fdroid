@@ -301,6 +301,35 @@
 </section>
 
 <section class="contenedor">
+  <h2>// Cloud sync (optional, Bote)</h2>
+  <div class="opcion">
+    <p>Bote is 100% local; QR and file sharing are plenty for groups that meet in person.
+    If you also want it to sync on its own, <strong style="color:var(--texto)">you bring the server</strong>
+    — we see nothing, there's no central account, no fine print. One person in the group sets it up (5 minutes) and that's it:</p>
+    <ol style="color:var(--texto2); font-size:14px; margin:14px 0 14px 22px; line-height:1.9;">
+      <li>Create a free project at <a href="https://supabase.com" style="color:var(--rojo)">supabase.com</a> (no credit card).</li>
+      <li>In the <em>SQL Editor</em>, run this:</li>
+    </ol>
+    <code class="url" style="white-space:pre-wrap;">create table if not exists eventos_sync (
+  uuid text primary key,
+  datos jsonb not null,
+  actualizado timestamptz not null default now()
+);
+alter table eventos_sync enable row level security;
+create policy "acceso anon" on eventos_sync
+  for all using (true) with check (true);</code>
+    <ol start="3" style="color:var(--texto2); font-size:14px; margin:14px 0 0 22px; line-height:1.9;">
+      <li>Copy the <em>Project URL</em> and the <em>anon</em> key (Settings → API).</li>
+      <li>In Bote → Settings → <em>Cloud sync</em>: flip the switch and paste both.
+          <strong style="color:var(--texto)">Everyone in the group uses the same two values.</strong></li>
+    </ol>
+    <p style="margin-top:14px;">From then on, whenever anyone opens an event the app pulls, merges and pushes.
+    The anon key is the key to your group's mailbox: share it privately and don't publish it.
+    Prefer your own VPS with PostgREST instead of Supabase? Same table, just change the URL.</p>
+  </div>
+</section>
+
+<section class="contenedor">
   <h2>// Confession</h2>
   <div class="confesion">
     <p>These apps were made with <strong>grade-A vibe coding</strong>: a human with ideas and zero

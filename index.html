@@ -300,6 +300,35 @@
 </section>
 
 <section class="contenedor">
+  <h2>// Sincronización en la nube (opcional, Bote)</h2>
+  <div class="opcion">
+    <p>Bote funciona 100% en local; el QR y el archivo bastan para grupos que se ven la cara.
+    Si además quieres que se sincronice solo, <strong style="color:var(--texto)">el servidor lo pones tú</strong>
+    — nosotros no vemos nada, no hay cuenta central, no hay letra pequeña. Uno del grupo lo monta (5 minutos) y listo:</p>
+    <ol style="color:var(--texto2); font-size:14px; margin:14px 0 14px 22px; line-height:1.9;">
+      <li>Crea un proyecto gratuito en <a href="https://supabase.com" style="color:var(--rojo)">supabase.com</a> (sin tarjeta).</li>
+      <li>En <em>SQL Editor</em>, ejecuta esto y pulsa Run:</li>
+    </ol>
+    <code class="url" style="white-space:pre-wrap;">create table if not exists eventos_sync (
+  uuid text primary key,
+  datos jsonb not null,
+  actualizado timestamptz not null default now()
+);
+alter table eventos_sync enable row level security;
+create policy "acceso anon" on eventos_sync
+  for all using (true) with check (true);</code>
+    <ol start="3" style="color:var(--texto2); font-size:14px; margin:14px 0 0 22px; line-height:1.9;">
+      <li>Copia la <em>Project URL</em> y la clave <em>anon</em> (Settings → API).</li>
+      <li>En Bote → Ajustes → <em>Sincronización en la nube</em>: activa el interruptor y pega ambas.
+          <strong style="color:var(--texto)">Todos los del grupo ponen los mismos dos valores.</strong></li>
+    </ol>
+    <p style="margin-top:14px;">A partir de ahí, cada vez que alguien abre un evento la app baja, fusiona y sube.
+    La clave anon es la llave del buzón del grupo: compártela por privado y no la publiques.
+    ¿Un VPS propio con PostgREST en vez de Supabase? Misma tabla, cambia solo la URL.</p>
+  </div>
+</section>
+
+<section class="contenedor">
   <h2>// Confesión</h2>
   <div class="confesion">
     <p>Estas apps se han hecho con <strong>vibe coding del bueno</strong>: un humano con ideas y cero
