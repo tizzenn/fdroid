@@ -9,14 +9,14 @@
     "--pretty"
   ],
   "disabled": [],
-  "endTimestamp": 1783093536841,
+  "endTimestamp": 1783094186881,
   "failedBuilds": {},
   "fdroiddata": {
-    "commitId": "79b04c0904c9c7b2166a0db87c53465b76520daf",
+    "commitId": "f4cb0aa81050ef078880eae6d95b2b2fd782bc10",
     "isDirty": false,
     "modifiedFiles": [],
     "untrackedFiles": [
-      "repo/bote-v2.0.apk"
+      "repo/lembra-v1.8.apk"
     ]
   },
   "jarsigner": "/opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/17.0.19-10/x64/bin/jarsigner",
@@ -34,14 +34,14 @@
     "com.lembra.app"
   ],
   "stages": {
-    "delete_disabled_builds": 1783093525037,
-    "index.make repo": 1783093533767,
-    "prepare_apps repo": 1783093533766,
-    "process_apks": 1783093525037,
-    "read_added_date_from_all_apks": 1783093533766,
-    "remove_apks": 1783093533765,
-    "scan_repo_files": 1783093533764
+    "delete_disabled_builds": 1783094175134,
+    "index.make repo": 1783094184115,
+    "prepare_apps repo": 1783094184114,
+    "process_apks": 1783094175134,
+    "read_added_date_from_all_apks": 1783094184114,
+    "remove_apks": 1783094184113,
+    "scan_repo_files": 1783094184112
   },
-  "startTimestamp": 1783093524000,
+  "startTimestamp": 1783094174000,
   "subcommand": "update"
 }
