@@ -91,6 +91,19 @@
 
   footer { padding: 48px 0 64px; text-align: center; color: var(--texto2); font-size: 13px; font-family: var(--mono); }
   footer a { color: var(--rojo); text-decoration: none; }
+
+  /* Botón flotante fijo hacia la sección de descarga */
+  .flotante {
+    position: fixed; right: 18px; bottom: 18px; z-index: 50;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--rojo-oscuro); color: #fff; text-decoration: none;
+    font-family: var(--mono); font-size: 13px; font-weight: 600;
+    padding: 12px 18px; border-radius: 999px; border: 1px solid var(--rojo);
+    box-shadow: 0 6px 24px rgba(0,0,0,.45);
+    transition: opacity .25s, transform .25s, background .15s;
+  }
+  .flotante:hover { background: var(--rojo); }
+  .flotante.oculto { opacity: 0; transform: translateY(12px); pointer-events: none; }
 </style>
 </head>
 <body>
@@ -354,5 +367,23 @@ create policy "acceso anon" on eventos_sync
   ningún diseñador fue consultado durante la producción de esta página
 </footer>
 
+<a class="flotante" href="#descargar">▼ Descargar e instalar</a>
+<script>
+  (function () {
+    var boton = document.querySelector('.flotante');
+    var seccion = document.getElementById('descargar');
+    if (!boton || !seccion) return;
+    function ajustar() {
+      var r = seccion.getBoundingClientRect();
+      var alaVista = r.top < window.innerHeight * 0.75 && r.bottom > 0;
+      boton.classList.toggle('oculto', alaVista);
+    }
+    window.addEventListener('scroll', ajustar, { passive: true });
+    window.addEventListener('resize', ajustar);
+    // Fallback para webviews raros que no emiten eventos de scroll
+    setInterval(ajustar, 600);
+    ajustar();
+  })();
+</script>
 </body>
 </html>

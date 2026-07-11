@@ -73,6 +73,19 @@
 
   footer { padding: 40px 0 64px; text-align: center; color: var(--texto2); font-size: 13px; font-family: var(--mono); border-top: 1px solid var(--borde); margin-top: 20px; }
   footer a { color: var(--rojo); text-decoration: none; }
+
+  /* Botón flotante fijo hacia la sección de descarga */
+  .flotante {
+    position: fixed; right: 18px; bottom: 18px; z-index: 50;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--rojo-oscuro); color: #fff; text-decoration: none;
+    font-family: var(--mono); font-size: 13px; font-weight: 600;
+    padding: 12px 18px; border-radius: 999px; border: 1px solid var(--rojo);
+    box-shadow: 0 6px 24px rgba(0,0,0,.45);
+    transition: opacity .25s, transform .25s, background .15s;
+  }
+  .flotante:hover { background: var(--rojo); }
+  .flotante.oculto { opacity: 0; transform: translateY(12px); pointer-events: none; }
 </style>
 </head>
 <body>
@@ -190,5 +203,6 @@
   <a href="./">← volver a las apps</a> · hecho por <a href="https://github.com/tizzenn">tizzenn</a> + claude · GPLv3
 </footer>
 
+<a class="flotante" href="./#descargar">▼ Descargar e instalar</a>
 </body>
 </html>
