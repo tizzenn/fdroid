@@ -14,7 +14,7 @@
       }
     },
     "address": "https://tizzenn.github.io/fdroid/repo",
-    "timestamp": 1783613383000,
+    "timestamp": 1783758415000,
     "categories": {
       "Time": {
         "name": {
@@ -35,13 +35,63 @@
         "categories": [
           "fdroid"
         ],
-        "lastUpdated": 1783183895000,
+        "lastUpdated": 1783758409000,
         "name": {
           "en-US": "Bote"
         },
         "preferredSigner": "b74213890f52e816ad6a6734887529b7f2c8edb7da09e110f620369a5acfa963"
       },
       "versions": {
+        "af3d0b37ab5799d6f13d8e0049fa1e64dc1188e400d4714c1a2dc133ba8acb85": {
+          "added": 1783758409000,
+          "file": {
+            "name": "/bote-v3.0.apk",
+            "sha256": "af3d0b37ab5799d6f13d8e0049fa1e64dc1188e400d4714c1a2dc133ba8acb85",
+            "size": 5581426
+          },
+          "manifest": {
+            "versionName": "3.0",
+            "versionCode": 23,
+            "usesSdk": {
+              "minSdkVersion": 26,
+              "targetSdkVersion": 34
+            },
+            "signer": {
+              "sha256": [
+                "b74213890f52e816ad6a6734887529b7f2c8edb7da09e110f620369a5acfa963"
+              ]
+            },
+            "usesPermission": [
+              {
+                "name": "android.permission.INTERNET"
+              },
+              {
+                "name": "android.permission.RECEIVE_BOOT_COMPLETED"
+              },
+              {
+                "name": "android.permission.POST_NOTIFICATIONS"
+              },
+              {
+                "name": "android.permission.READ_CONTACTS"
+              },
+              {
+                "name": "android.permission.WAKE_LOCK"
+              },
+              {
+                "name": "android.permission.ACCESS_NETWORK_STATE"
+              },
+              {
+                "name": "android.permission.FOREGROUND_SERVICE"
+              },
+              {
+                "name": "com.bote.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+              },
+              {
+                "name": "android.permission.CAMERA"
+              }
+            ]
+          }
+        },
         "d58bdd2436bec1d177188c7cdf727765e9af9a5d857407f52e468c4ddc7fa881": {
           "added": 1783183895000,
           "file": {
