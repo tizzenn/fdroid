@@ -1,6 +1,6 @@
 {
   "repo": {
-    "timestamp": 1783758415000,
+    "timestamp": 1784216687000,
     "version": 20002,
     "name": "Repositorio de tizzenn",
     "icon": "icon.png",
@@ -28,7 +28,7 @@
       "categories": [
         "Time"
       ],
-      "suggestedVersionCode": "14",
+      "suggestedVersionCode": "15",
       "description": "App Android para no olvidar vencimientos que se repiten: seguro del coche,\nvacunas de las mascotas, revisiones de la caldera... Crea una ficha con\nfecha de inicio, periodicidad y n\u00famero de repeticiones, y Lembra te avisa\ncon la antelaci\u00f3n que elijas.",
       "license": "Unknown",
       "name": "Lembra",
@@ -36,7 +36,7 @@
       "webSite": "https://github.com/tizzenn/lembra",
       "added": 1782944295000,
       "packageName": "com.lembra.app",
-      "lastUpdated": 1783613379000
+      "lastUpdated": 1784216684000
     }
   ],
   "packages": {
@@ -631,6 +631,50 @@
       }
     ],
     "com.lembra.app": [
+      {
+        "added": 1784216684000,
+        "apkName": "lembra-v1.14.apk",
+        "hash": "d2b14dd8f288996408ce65c669f6638830dbc3836c37f45ef0fc1d2e5c52c99a",
+        "hashType": "sha256",
+        "minSdkVersion": 26,
+        "packageName": "com.lembra.app",
+        "sig": "7f074a601887d744e0c644e7d9490aa0",
+        "signer": "2e7304a9c03ffe47106c33af65f915ec8665fb1650a19a9b391e370f8574f12b",
+        "size": 5028551,
+        "targetSdkVersion": 34,
+        "uses-permission": [
+          [
+            "android.permission.RECEIVE_BOOT_COMPLETED",
+            null
+          ],
+          [
+            "android.permission.READ_CALENDAR",
+            null
+          ],
+          [
+            "android.permission.WRITE_CALENDAR",
+            null
+          ],
+          [
+            "android.permission.POST_NOTIFICATIONS",
+            null
+          ],
+          [
+            "android.permission.SCHEDULE_EXACT_ALARM",
+            null
+          ],
+          [
+            "android.permission.USE_EXACT_ALARM",
+            null
+          ],
+          [
+            "com.lembra.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
+            null
+          ]
+        ],
+        "versionCode": 15,
+        "versionName": "1.14"
+      },
       {
         "added": 1783613379000,
         "apkName": "lembra-v1.13.apk",
